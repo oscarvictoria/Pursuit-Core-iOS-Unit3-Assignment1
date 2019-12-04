@@ -15,6 +15,9 @@ struct People: Codable {
 struct PeopleData: Codable {
     let gender: String
     let name: [String:String]
+    let email: String
+    let dob: String
+    let phone: String
     let location: Location
 }
 
@@ -27,17 +30,25 @@ struct Location: Codable {
 
 extension People {
     static func getUsers() -> [PeopleData] {
+        
         var users = [PeopleData]()
+        
+        
         guard let fileURL = Bundle.main.url(forResource: "userinfo", withExtension: "json") else {
         fatalError("could not locate json file")
     }
         do {
             let data = try Data(contentsOf: fileURL)
-                      let userData = try JSONDecoder().decode(People.self, from: data)
+            let userData = try JSONDecoder().decode(People.self, from: data)
             users = userData.results
         } catch {
             fatalError("error: \(error)")
         }
+        
+        
         return users
+        
 }
+ 
+    
 }

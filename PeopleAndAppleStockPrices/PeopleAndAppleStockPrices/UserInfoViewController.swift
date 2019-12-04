@@ -12,9 +12,17 @@ class UserInfoViewController: UIViewController {
     
 @IBOutlet weak var tableView: UITableView!
     
+@IBOutlet weak var searchBar: UISearchBar!
+    
     var user = [PeopleData]() {
         didSet {
             tableView.reloadData()
+        }
+    }
+    
+    var getFullNames = [PeopleData]() {
+        didSet {
+            
         }
     }
     
@@ -22,11 +30,33 @@ class UserInfoViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
+    searchBar.delegate = self
     loadData()
+    sortNames()
     
   }
     func loadData() {
         user = People.getUsers()
+    }
+    func sortNames() {
+        user = People.getUsers().sorted{$0.name["last"] ?? "" < $1.name["last"] ?? ""}
+    }
+    
+    
+    
+    func filterNames(for searchText: String) {
+        guard !searchText.isEmpty else { return }
+        user = People.getUsers().filter {($0.name["first"]?.lowercased().contains(searchText.lowercased()) ?? true)}
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let userDVC = segue.destination as? UserInfoDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("error")
+        }
+        
+        let someUser = user[indexPath.row]
+        userDVC.updatedUserInfo = someUser
     }
 
 }
@@ -39,8 +69,27 @@ extension UserInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let users = user[indexPath.row]
-        cell.textLabel?.text = ("\(users.name["first"]?.capitalized ?? "") \(users.name["last"]?.capitalized ?? "")")
+        let fullName = (users.name["first"]?.capitalized ?? "") + " " + (users.name["last"]?.capitalized ?? "")
+        cell.textLabel?.text = fullName
+        cell.detailTextLabel?.text = "\(users.location.city.capitalized), \(users.location.state.capitalized)"
 
         return cell
+    }
+}
+
+extension UserInfoViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchText = searchBar.text else { return }
+        filterNames(for: searchText)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+                   loadData()
+                   sortNames()
+                   return
+               }
     }
 }

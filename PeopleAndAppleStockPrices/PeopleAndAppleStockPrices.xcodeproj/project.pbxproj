@@ -15,6 +15,7 @@
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
 		BE14AE542395B98200C925FE /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14AE532395B98200C925FE /* PeopleData.swift */; };
+		BE344878239728B1002410F1 /* UserInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
 		BE14AE532395B98200C925FE /* PeopleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
+		BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BED21BA8BA10083EB97 /* UserInfoViewController.swift */,
+				BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				BE14AE532395B98200C925FE /* PeopleData.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
@@ -164,6 +167,7 @@
 			files = (
 				577E5BEE21BA8BA10083EB97 /* UserInfoViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				BE344878239728B1002410F1 /* UserInfoDetailViewController.swift in Sources */,
 				BE14AE542395B98200C925FE /* PeopleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
