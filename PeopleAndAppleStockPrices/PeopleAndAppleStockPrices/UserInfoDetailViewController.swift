@@ -31,6 +31,20 @@ class UserInfoDetailViewController: UIViewController {
         userEmailLabel.text = ("Email: \(userInfo.email)")
         userDOBLabel.text = "Date Of Birth: \(userInfo.dob)"
         userPhoneLabel.text = "Phone: \(userInfo.phone)"
+        
+//    ImageClient.fetchImage(for: userInfo.picture.medium) { [unowned self] (result) in
+//           switch result {
+//                case .failure(let error):
+//                    print("error: \(error)")
+//                case .success(let image):
+//                    DispatchQueue.main.async {
+//                        self.userImageView.image = image
+//                    }
+//
+//                }
+//
+//
+//        }
     }
    
 

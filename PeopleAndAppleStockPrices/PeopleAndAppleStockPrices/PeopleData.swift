@@ -19,6 +19,11 @@ struct PeopleData: Codable {
     let dob: String
     let phone: String
     let location: Location
+    let picture: Picture
+}
+
+struct Picture: Codable {
+    let medium: String
 }
 
 struct Location: Codable {

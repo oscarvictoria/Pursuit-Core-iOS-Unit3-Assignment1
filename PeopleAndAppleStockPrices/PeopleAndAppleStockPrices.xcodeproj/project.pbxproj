@@ -16,6 +16,10 @@
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
 		BE14AE542395B98200C925FE /* PeopleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14AE532395B98200C925FE /* PeopleData.swift */; };
 		BE344878239728B1002410F1 /* UserInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */; };
+		BE34487A2397362C002410F1 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3448792397362C002410F1 /* ImageClient.swift */; };
+		BE34487C239862E0002410F1 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34487B239862E0002410F1 /* StocksViewController.swift */; };
+		BE34488023986445002410F1 /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34487F23986445002410F1 /* StocksDetailViewController.swift */; };
+		BE34488223986AF8002410F1 /* StocksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE34488123986AF8002410F1 /* StocksData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
 		BE14AE532395B98200C925FE /* PeopleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleData.swift; sourceTree = "<group>"; };
 		BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewController.swift; sourceTree = "<group>"; };
+		BE3448792397362C002410F1 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		BE34487B239862E0002410F1 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		BE34487F23986445002410F1 /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
+		BE34488123986AF8002410F1 /* StocksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +73,11 @@
 				577E5BED21BA8BA10083EB97 /* UserInfoViewController.swift */,
 				BE344877239728B1002410F1 /* UserInfoDetailViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				BE34487B239862E0002410F1 /* StocksViewController.swift */,
+				BE34487F23986445002410F1 /* StocksDetailViewController.swift */,
+				BE34488123986AF8002410F1 /* StocksData.swift */,
 				BE14AE532395B98200C925FE /* PeopleData.swift */,
+				BE3448792397362C002410F1 /* ImageClient.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -166,8 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				577E5BEE21BA8BA10083EB97 /* UserInfoViewController.swift in Sources */,
+				BE34488023986445002410F1 /* StocksDetailViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				BE344878239728B1002410F1 /* UserInfoDetailViewController.swift in Sources */,
+				BE34488223986AF8002410F1 /* StocksData.swift in Sources */,
+				BE34487C239862E0002410F1 /* StocksViewController.swift in Sources */,
+				BE34487A2397362C002410F1 /* ImageClient.swift in Sources */,
 				BE14AE542395B98200C925FE /* PeopleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

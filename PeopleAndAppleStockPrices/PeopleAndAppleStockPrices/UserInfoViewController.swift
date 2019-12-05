@@ -10,8 +10,8 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-@IBOutlet weak var tableView: UITableView!
     
+@IBOutlet weak var tableView: UITableView!
 @IBOutlet weak var searchBar: UISearchBar!
     
     var user = [PeopleData]() {
@@ -20,27 +20,21 @@ class UserInfoViewController: UIViewController {
         }
     }
     
-    var getFullNames = [PeopleData]() {
-        didSet {
-            
-        }
-    }
-    
-
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
     searchBar.delegate = self
     loadData()
-    sortNames()
+//    sortNames()
     
   }
     func loadData() {
-        user = People.getUsers()
-    }
-    func sortNames() {
         user = People.getUsers().sorted{$0.name["last"] ?? "" < $1.name["last"] ?? ""}
     }
+    
+//    func sortNames() {
+//        user = People.getUsers().sorted{$0.name["last"] ?? "" < $1.name["last"] ?? ""}
+//    }
     
     
     
@@ -88,7 +82,6 @@ extension UserInfoViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
                    loadData()
-                   sortNames()
                    return
                }
     }
