@@ -23,7 +23,7 @@ struct PeopleData: Codable {
 }
 
 struct Picture: Codable {
-    let medium: String
+    let large: String
 }
 
 struct Location: Codable {

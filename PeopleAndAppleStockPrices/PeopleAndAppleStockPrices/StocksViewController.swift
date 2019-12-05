@@ -51,7 +51,6 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return theStocks[section].first?.date
-
+        return theStocks[section].first?.label.components(separatedBy: " ").first ?? ""
     }
 }

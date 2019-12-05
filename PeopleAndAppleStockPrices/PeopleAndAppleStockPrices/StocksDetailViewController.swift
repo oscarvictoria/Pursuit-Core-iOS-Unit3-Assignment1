@@ -9,13 +9,15 @@
 import UIKit
 
 class StocksDetailViewController: UIViewController {
+    
+@IBOutlet weak var detailImageView: UIImage!
+@IBOutlet weak var detailDateLabel: UILabel!
+@IBOutlet weak var openingLabel: UILabel!
+@IBOutlet weak var closingLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
     }
     
-
-
 }

@@ -32,19 +32,19 @@ class UserInfoDetailViewController: UIViewController {
         userDOBLabel.text = "Date Of Birth: \(userInfo.dob)"
         userPhoneLabel.text = "Phone: \(userInfo.phone)"
         
-//    ImageClient.fetchImage(for: userInfo.picture.medium) { [unowned self] (result) in
-//           switch result {
-//                case .failure(let error):
-//                    print("error: \(error)")
-//                case .success(let image):
-//                    DispatchQueue.main.async {
-//                        self.userImageView.image = image
-//                    }
+    ImageClient.fetchImage(for: userInfo.picture.large) { [unowned self] (result) in
+           switch result {
+                case .failure(let error):
+                    print("error: \(error)")
+                case .success(let image):
+                    DispatchQueue.main.async {
+                        self.userImageView.image = image
+                    }
+
+                }
 //
-//                }
 //
-//
-//        }
+        }
     }
    
 
