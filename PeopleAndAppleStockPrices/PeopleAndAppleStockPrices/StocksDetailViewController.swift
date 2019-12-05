@@ -10,14 +10,34 @@ import UIKit
 
 class StocksDetailViewController: UIViewController {
     
-@IBOutlet weak var detailImageView: UIImage!
+var datailStock: Stocks?
+    
+@IBOutlet weak var detailImageView: UIImageView!
 @IBOutlet weak var detailDateLabel: UILabel!
 @IBOutlet weak var openingLabel: UILabel!
 @IBOutlet weak var closingLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
+    }
+    
+    func updateUI() {
+        guard let someStock = datailStock else {
+            fatalError()
+        }
+        detailDateLabel.text = someStock.date
+        openingLabel.text = "Open: \(someStock.open.description)"
+        closingLabel.text = "Close: \(someStock.close.description)"
+        
+        if someStock.open < someStock.close {
+            view.backgroundColor = .green
+            detailImageView.image = #imageLiteral(resourceName: "thumbsUp")
+        } else {
+            view.backgroundColor = .red
+            detailImageView.image = #imageLiteral(resourceName: "thumbsDown")
+        }
+        
     }
     
 }

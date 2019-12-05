@@ -29,6 +29,15 @@ class StocksViewController: UIViewController {
         theStocks = Stocks.getstockSections()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let stockDVC = segue.destination as? StocksDetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("error")
+        }
+        let stock = theStocks[indexPath.section][indexPath.row]
+        stockDVC.datailStock = stock
+    }
+    
 }
 
 extension StocksViewController: UITableViewDataSource {

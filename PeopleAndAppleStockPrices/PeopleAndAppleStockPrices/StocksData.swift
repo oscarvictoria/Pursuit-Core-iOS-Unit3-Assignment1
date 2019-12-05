@@ -11,6 +11,7 @@ import Foundation
 struct Stocks: Codable {
     let date: String
     let open: Double
+    let close: Double
     var label: String
 }
 
