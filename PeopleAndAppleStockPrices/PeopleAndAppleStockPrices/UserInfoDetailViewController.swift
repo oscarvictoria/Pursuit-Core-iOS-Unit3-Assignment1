@@ -32,7 +32,7 @@ class UserInfoDetailViewController: UIViewController {
         userDOBLabel.text = "Date Of Birth: \(userInfo.dob)"
         userPhoneLabel.text = "Phone: \(userInfo.phone)"
         
-    ImageClient.fetchImage(for: userInfo.picture.large) { [unowned self] (result) in
+    ImageClient.fetchImage(for: userInfo.picture.large) { (result) in
            switch result {
                 case .failure(let error):
                     print("error: \(error)")

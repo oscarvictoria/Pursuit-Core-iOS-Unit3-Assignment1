@@ -17,7 +17,6 @@ struct ImageClient {
             print("bad url \(urlString)")
             return
         }
-        
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             // check if an error exist
             if let error = error {
@@ -33,6 +32,7 @@ struct ImageClient {
                 // use data to create an image
                 let image = UIImage(data: data)
                 // capture result of image
+                
                 completion(.success(image))
             }
         }

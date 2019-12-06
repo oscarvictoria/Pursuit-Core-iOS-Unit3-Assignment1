@@ -38,13 +38,14 @@ extension Stocks {
 }
  
     static func getstockSections() -> [[Stocks]] {
-//        let sortedStocks = Stocks.getStocks().sorted{$0.date < $1.date}
-//
-//        let months = sortedStocks.sorted
+
         
-       let stocks = getStocks()
-        // 2017 08 31 [0] + [1] = 201709
-    
+        let stocks = getStocks()
+        
+//        let averageOpening = average(stocks.first!)
+        
+        
+        
         var sections = Array(repeating:[Stocks](), count: stocks.count)
         
         var currentIndex = 0
@@ -55,6 +56,7 @@ extension Stocks {
             let month = stock.label.components(separatedBy: " ").first ?? ""
             if month == currentStock {
                 sections[currentIndex].append(stock)
+                                
             } else {
                 currentIndex += 1
                 currentStock = stock.label.components(separatedBy: " ").first ?? ""
@@ -66,29 +68,6 @@ extension Stocks {
         
     }
     
-//    func getDate()  {
-//    var theDate = Stocks.getStocks()
-//
-//    var labels = theDate
-//
-//    var theMonths = ""
-//
-//        for months in labels {
-//            months.label = theMonths
-//        }
-    
-//    for stock in theDate {
-//        getDate = stock.label
-//    }
-    
-        
-        
-//        let getDate = theDate.label
-//        let start = getDate.startIndex
-//        let end = getDate.index(start, offsetBy: 3)
-//        let range = start...end
-//        let subString = getDate[range]
-    
 }
     
-//}
+

@@ -9,6 +9,16 @@
 import UIKit
 
 class StocksViewController: UIViewController {
+    
+    func average(numbers: [Stocks]) -> Double {
+        var sum = 0.0
+        var count = Double()
+        for number in numbers {
+            sum += number.open
+        }
+        count = Double(sum) / Double(numbers.count)
+        return round(count * 100.0) / 100.0
+    }
 
 @IBOutlet weak var tableView: UITableView!
     
@@ -60,6 +70,6 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return theStocks[section].first?.label.components(separatedBy: " ").first ?? ""
+        return "\(theStocks[section].first?.label.components(separatedBy: " ").first ?? ""):  Average $\(average(numbers: theStocks[section]))"
     }
 }
