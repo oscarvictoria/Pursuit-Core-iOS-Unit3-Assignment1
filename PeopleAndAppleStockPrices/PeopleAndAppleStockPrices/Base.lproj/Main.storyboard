@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="126.5625"/>
         </scene>
-        <!--Stocks View Controller-->
+        <!--Stocks-->
         <scene sceneID="CLy-TM-gB5">
             <objects>
                 <viewController id="W6w-d6-eNF" customClass="StocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,7 +127,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dqs-S0-jSQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="99j-1o-u6I"/>
+                    <navigationItem key="navigationItem" title="Stocks" id="99j-1o-u6I"/>
                     <connections>
                         <outlet property="tableView" destination="pof-Yt-XVm" id="yPt-N2-RpK"/>
                     </connections>

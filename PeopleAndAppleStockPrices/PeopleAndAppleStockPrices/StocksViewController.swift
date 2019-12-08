@@ -10,15 +10,7 @@ import UIKit
 
 class StocksViewController: UIViewController {
     
-    func average(numbers: [Stocks]) -> Double {
-        var sum = 0.0
-        var count = Double()
-        for number in numbers {
-            sum += number.open
-        }
-        count = Double(sum) / Double(numbers.count)
-        return round(count * 100.0) / 100.0
-    }
+    
 
 @IBOutlet weak var tableView: UITableView!
     
@@ -37,6 +29,16 @@ class StocksViewController: UIViewController {
     
     func loadData() {
         theStocks = Stocks.getstockSections()
+    }
+    
+    func average(numbers: [Stocks]) -> Double {
+        var sum = 0.0
+        var count = Double()
+        for number in numbers {
+            sum += number.open
+        }
+        count = Double(sum) / Double(numbers.count)
+        return round(count * 100.0) / 100.0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,10 +68,9 @@ extension StocksViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         theStocks.count
-
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(theStocks[section].first?.label.components(separatedBy: " ").first ?? ""):  Average $\(average(numbers: theStocks[section]))"
+        return "\(theStocks[section].first?.label.components(separatedBy: " ").first ?? "") - 20\(theStocks[section].first?.label.components(separatedBy: " ").last ?? ""):  Average $\(average(numbers: theStocks[section]))"
     }
 }

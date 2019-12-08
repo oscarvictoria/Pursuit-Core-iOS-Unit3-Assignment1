@@ -14,13 +14,19 @@ struct People: Codable {
 
 struct PeopleData: Codable {
     let gender: String
-    let name: [String:String]
+    let name: Name
     let email: String
     let dob: String
     let phone: String
     let location: Location
     let picture: Picture
 }
+
+struct Name: Codable {
+    let first: String
+    let last: String
+}
+
 
 struct Picture: Codable {
     let large: String
