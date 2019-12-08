@@ -29,18 +29,18 @@ class UserInfoViewController: UIViewController {
     
   }
     func loadData() {
-        user = People.getUsers().sorted{$0.name["last"] ?? "" < $1.name["last"] ?? ""}
+        user = People.getUsers().sorted{$0.name.fullName < $1.name.fullName}
     }
     
-//    func sortNames() {
-//        user = People.getUsers().sorted{$0.name["last"] ?? "" < $1.name["last"] ?? ""}
-//    }
+    func sortNames() {
+    
+    }
     
     
     
-    func filterNames(for searchText: String) {
+ func filterNames(for searchText: String) {
         guard !searchText.isEmpty else { return }
-        user = People.getUsers().filter {($0.name["first"]?.lowercased().contains(searchText.lowercased()) ?? true)}
+    user = People.getUsers().filter{$0.name.fullName.lowercased().contains(searchText.lowercased())}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,8 +63,8 @@ extension UserInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let users = user[indexPath.row]
-        let fullName = (users.name["first"]?.capitalized ?? "") + " " + (users.name["last"]?.capitalized ?? "")
-        cell.textLabel?.text = fullName
+//        let fullName = users.name.first + " " + users.name.last
+        cell.textLabel?.text = users.name.fullName.capitalized
         cell.detailTextLabel?.text = "\(users.location.city.capitalized), \(users.location.state.capitalized)"
 
         return cell
@@ -84,5 +84,6 @@ extension UserInfoViewController: UISearchBarDelegate {
                    loadData()
                    return
                }
+        
     }
 }

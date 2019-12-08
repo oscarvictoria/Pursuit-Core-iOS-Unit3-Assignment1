@@ -11,6 +11,8 @@ import UIKit
 class UserInfoDetailViewController: UIViewController {
     
     
+    
+    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userDOBLabel: UILabel!

@@ -25,6 +25,10 @@ struct PeopleData: Codable {
 struct Name: Codable {
     let first: String
     let last: String
+    let title: String
+    var fullName: String {
+        "\(first) \(last)"
+    }
 }
 
 
